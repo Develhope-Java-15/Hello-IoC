@@ -4,13 +4,21 @@ public class Car {
 
     private CarBody body;
     private CarEngine engine;
-
-    public Car(String name, CarBody body, CarEngine engine) {
+    
+    public Car(String name) {
         this.name = name;
-        this.body = body;
-        this.engine = engine;
+        this.body = null;
+        this.engine = null;
 
         this.speed = 0.0f;
+    }
+
+    public void setBody(CarBody body) {
+        this.body = body;
+    }
+
+    public void setEngine(CarEngine engine) {
+        this.engine = engine;
     }
 
     public float getSpeed() {

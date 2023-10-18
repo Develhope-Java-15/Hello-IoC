@@ -1,16 +1,18 @@
 class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!"); 
-        CarEngine slowEngine = new CarEngine("Pando engine", 10f);
-        CarEngine fastEngine = new CarEngine("Farrori engine", 30f);
-        CarProportionalEngine proportionalEngine = new CarProportionalEngine("Proporional", 20f);
+        Car slowCar = new Car("Pando");
+        Car fastCar = new Car("Farrori");
+        Car mixedCar = new Car("Parrori");
 
-        CarBody scrapBody = new CarBody("Pando body", 60f);
-        CarBody robustBody = new CarBody("Farrori body", 200f);
+        CarShop.mountScrapBody(slowCar);
+        CarShop.mountSlowEngine(slowCar);
 
-        Car slowCar = new Car("Pando", scrapBody, slowEngine);
-        Car fastCar = new Car("Farrori", robustBody, fastEngine);
-        Car mixedCar = new Car("Parrori", robustBody, proportionalEngine);
+        CarShop.mountRobustBody(fastCar);
+        CarShop.mountFastEngine(fastCar);
+
+        CarShop.mountRobustBody(mixedCar);
+        CarShop.mountSlowEngine(mixedCar);
 
         for(int i = 1; i <= 10; ++i) {
             System.out.println("Accelerata #" + i);
